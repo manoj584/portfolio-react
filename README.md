@@ -1,4 +1,4 @@
-# Bhaskar Manoj - Portfolio Website
+# 🧑‍💻 Bhaskar Manoj - Portfolio Website
 
 A modern, responsive portfolio website built with React.js showcasing my skills, experience, and projects as a Software Engineer and Full Stack Developer.
 
