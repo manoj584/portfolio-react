@@ -1,0 +1,5 @@
+mkdir -p .github/workflows
+# Create the file with the content above
+git add .github/workflows/deploy.yml
+git commit -m "Add GitHub Actions deployment workflow"
+git push origin main
