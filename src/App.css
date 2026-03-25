@@ -66,7 +66,7 @@ body {
 .navbar-brand { cursor: default; }
 .nav-link.btn { background: none !important; }
 .hero-section { min-height: 100vh; }
-.full-page-section { min-height: 100vh; display: flex; align-items: center; }
+.full-page-section { padding: 5rem 0; display: flex; align-items: center; }
 .page-transition { transition: all 0.5s ease-in-out; }
 .contact-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
 
