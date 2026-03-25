@@ -29,7 +29,7 @@ const Experience = () => {
                     </div>
                     <div className="col-md-4 text-md-end">
                       <span className="badge bg-success bg-opacity-10 text-success fs-6">
-                        <i className="fas fa-calendar me-2"></i>Jun 2024 - Present
+                        <i className="fas fa-calendar me-2"></i>Oct 2025 - Present
                       </span>
                     </div>
                   </div>
