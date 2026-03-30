@@ -26,7 +26,7 @@ const Navigation = ({ activeSection, scrollToSection }) => {
     localStorage.setItem('theme', next ? 'dark' : 'light');
   };
 
-  const navLinks = ['home', 'about', 'experience', 'projects', 'certifications', 'contact'];
+  const navLinks = ['home', 'about', 'skills', 'experience', 'projects', 'certifications', 'contact'];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${

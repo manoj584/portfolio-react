@@ -41,12 +41,12 @@ const Home = ({ scrollToSection }) => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium mb-6" data-aos="fade-up" data-aos-delay="200">
-          Software Engineer <span className="text-accent-500">&bull;</span> Full Stack Developer
+          Software Engineer (Full Stack)
         </p>
 
         {/* Description */}
         <p className="text-gray-500 dark:text-gray-500 text-lg max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="250">
-          Passionate about building scalable web applications using modern technologies like Angular, React, Node.js, .NET, MySQL, and MongoDB.
+          Passionate about building scalable web applications using modern technologies like Angular, React, Node.js, MySQL, and MongoDB.
         </p>
 
         {/* CTA Buttons */}

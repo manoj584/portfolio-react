@@ -14,16 +14,18 @@ const Projects = () => {
       icon: 'fas fa-link',
     },
     {
-      title: 'User Lifecycle Management System',
-      description: 'Engineered a scalable User Management System for schools with secure authentication and role-based access.',
-      technologies: ['.NET Core', 'SQL Server', 'MySQL', 'React', 'Entity Framework'],
+      title: 'Learn React Native – Educational App',
+      description: 'Built a comprehensive mobile learning app for React Native with interactive lessons, quizzes, and a complete component reference guide.',
+      technologies: ['React Native', 'Expo', 'Redux', 'React Navigation', 'NativeWind'],
       features: [
-        'Secure user authentication',
-        'Role-based access control',
-        'Profile management system',
-        'Optimized database interactions'
+        'Interactive lessons on JSX, Components, Props, Hooks & Lifecycle',
+        'Quiz & interview prep module with curated questions',
+        'Drawer navigation with search and 20+ core component demos',
+        'Published on Android with EAS Build'
       ],
-      icon: 'fas fa-users-cog',
+      icon: 'fas fa-mobile-alt',
+      link: 'https://play.google.com/store/apps/details?id=com.bhaskarmanoj.reactnativeacademy',
+      linkLabel: 'Play Store',
     }
   ];
 
@@ -45,7 +47,7 @@ const Projects = () => {
               data-aos-delay={index * 100}
             >
               {/* Project icon & title */}
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-4">
                 <div className="w-11 h-11 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent-500/20 transition-colors">
                   <i className={`${project.icon} text-accent-500`} />
                 </div>
@@ -80,6 +82,21 @@ const Projects = () => {
                   ))}
                 </ul>
               </div>
+
+              {project.link && (
+                <div className="mt-5 pt-5 border-t border-gray-200 dark:border-gray-700">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm font-semibold hover:bg-accent-500/20 transition-colors"
+                  >
+                    <i className="fab fa-google-play text-sm" />
+                    {project.linkLabel}
+                    <i className="fas fa-external-link-alt text-[10px]" />
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -4,6 +4,7 @@ const Certifications = () => {
   const certificates = [
     { name: 'Data Analytics with Python', issuer: 'NPTEL - IIT Kharagpur', date: 'May 2022', type: 'Elite Certificate' },
     { name: 'Blockchain and its Applications', issuer: 'NPTEL - IIT Kharagpur', date: 'May 2022', type: 'Elite Certificate' },
+    { name: 'MERN Stack Certification', issuer: 'JSpiders', date: 'Mar 2023 – Sep 2023', type: 'Full Stack' },
     { name: 'JavaScript Certification', issuer: 'HackerRank', date: 'March 2023', type: 'Basic & Intermediate' },
     { name: 'Node.js Certification', issuer: 'HackerRank', date: 'August 2023', type: 'Basic & Intermediate' }
   ];

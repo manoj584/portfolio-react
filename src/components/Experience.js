@@ -32,7 +32,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 bg-white dark:bg-gray-950 transition-colors duration-300">
+    <section id="experience" className="py-24 px-4 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -46,9 +46,9 @@ const Experience = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-6">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Full Stack Developer</h3>
-                <p className="text-accent-600 dark:text-accent-400 font-medium text-sm">POS, CMS, Shipper & Marketplace Applications</p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Angular / Ionic / TypeScript</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Software Engineer</h3>
+                <p className="text-accent-600 dark:text-accent-400 font-medium text-sm">Rozana Rural Commerce Pvt Ltd</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Bangalore, India &middot; Full-time</p>
               </div>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-semibold whitespace-nowrap border border-green-500/20">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
@@ -127,7 +127,7 @@ const Experience = () => {
           <div className="relative p-6 md:p-8 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800" data-aos="fade-up">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-6">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Software Engineer</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Associate Software Engineer</h3>
                 <p className="text-accent-600 dark:text-accent-400 font-medium text-sm">Unisys India Pvt Ltd</p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Bangalore, India &middot; Full-time</p>
               </div>

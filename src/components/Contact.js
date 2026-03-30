@@ -9,7 +9,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-4 overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+    <section id="contact" className="relative py-24 px-4 overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-600/5 via-transparent to-purple-600/5 dark:from-accent-600/20 dark:via-gray-950 dark:to-purple-600/20" />
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent-500/5 dark:bg-accent-500/10 rounded-full blur-[150px]" />
