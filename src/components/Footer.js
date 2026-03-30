@@ -1,54 +1,32 @@
 import React from 'react';
 
 const Footer = () => {
-  return (
-    <footer
-      className="footer-custom py-4"
-      style={{ color: 'var(--text-color)', backgroundColor: 'var(--bg-color)' }}
-    >
-      <div className="container">
-        <div className="row align-items-center">
-          {/* Left side */}
-          <div className="col-md-6 text-center text-md-start">
-            <p className="mb-0">© 2025 Bhaskar Manoj. All rights reserved.</p>
-            <small style={{ color: 'var(--muted-text)' }}>
-              Built with React &amp; Bootstrap
-            </small>
-          </div>
+  const socials = [
+    { icon: 'fab fa-linkedin-in', href: 'https://linkedin.com/in/manoj-bhaskar-99b842234/', label: 'LinkedIn' },
+    { icon: 'fab fa-github', href: 'https://github.com/Manoj584', label: 'GitHub' },
+    { icon: 'fas fa-envelope', href: 'mailto:manojbhaskar01234@gmail.com', label: 'Email' },
+  ];
 
-          {/* Right side */}
-          <div className="col-md-6 text-center text-md-end">
-            <div className="d-flex justify-content-center justify-content-md-end gap-3">
-              <a
-                href="https://linkedin.com/in/manoj-bhaskar-99b842234/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--text-color)' }}
-                className="social-btn"
-                aria-label="LinkedIn profile"
-              >
-                <i className="fab fa-linkedin fs-4"></i>
-              </a>
-              <a
-                href="https://github.com/Manoj584"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--text-color)' }}
-                className="social-btn"
-                aria-label="GitHub profile"
-              >
-                <i className="fab fa-github fs-4"></i>
-              </a>
-              <a
-                href="mailto:manojbhaskar01234@gmail.com"
-                style={{ color: 'var(--text-color)' }}
-                className="social-btn"
-                aria-label="Send email"
-              >
-                <i className="fas fa-envelope fs-4"></i>
-              </a>
-            </div>
-          </div>
+  return (
+    <footer className="py-8 px-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="text-center md:text-left">
+          <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">&copy; 2025 Bhaskar Manoj. All rights reserved.</p>
+          <p className="text-gray-400 dark:text-gray-500 text-xs mt-0.5">Built with React &amp; Tailwind CSS</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {socials.map((s, i) => (
+            <a
+              key={i}
+              href={s.href}
+              target={s.href.startsWith('http') ? '_blank' : undefined}
+              rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
+              aria-label={s.label}
+              className="w-10 h-10 flex items-center justify-center rounded-xl text-gray-500 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 hover:bg-accent-500/10 transition-all duration-300"
+            >
+              <i className={`${s.icon} text-sm`} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

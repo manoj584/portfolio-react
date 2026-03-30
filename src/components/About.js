@@ -1,115 +1,92 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { animationConfig } from './animations';
+import React from 'react';
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      ...animationConfig.fadeUp
-    });
-  }, []);
-  const skills = {
-    languages: ['HTML', 'CSS', 'JavaScript', 'SQL', 'C#'],
-    
-    frameworksAndLibraries: ['Bootstrap', 'Tailwind CSS', 'Angular', 'React', 'React Native', 'Node.js', 'Express.js', 'ADO.NET'],
-    
-    databases: ['SQL Server', 'MySQL', 'MongoDB'],
-    
-    tools: ['Visual Studio Code', 'IntelliJ IDEA', 'Jira', 'Git', 'GitHub', 'Postman', 'Swagger'],
-    
-    softSkills: [
-      'Time Management',
-      'Excellent Communication',
-      'Adaptability',
-      'Problem Solving',
-      'Team Collaboration'
-    ]
+  const skillCategories = [
+    { label: 'Languages', color: 'accent', items: ['HTML', 'CSS', 'JavaScript', 'SQL', 'C#'] },
+    { label: 'Frameworks', color: 'blue', items: ['Bootstrap', 'Tailwind CSS', 'Angular', 'React', 'React Native', 'Node.js', 'Express.js', 'ADO.NET'] },
+    { label: 'Databases', color: 'emerald', items: ['SQL Server', 'MySQL', 'MongoDB'] },
+    { label: 'Tools', color: 'orange', items: ['Visual Studio Code', 'IntelliJ IDEA', 'Jira', 'Git', 'GitHub', 'Postman', 'Swagger'] },
+    { label: 'Soft Skills', color: 'purple', items: ['Time Management', 'Excellent Communication', 'Adaptability', 'Problem Solving', 'Team Collaboration'] },
+  ];
+
+  const colorMap = {
+    accent: 'bg-accent-500/10 text-accent-600 dark:text-accent-400 border-accent-500/20',
+    blue: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+    emerald: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+    orange: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
+    purple: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
   };
-  
+
+  const dotColor = {
+    accent: 'bg-accent-500',
+    blue: 'bg-blue-500',
+    emerald: 'bg-emerald-500',
+    orange: 'bg-orange-500',
+    purple: 'bg-purple-500',
+  };
 
   return (
-    <section id="about" className="full-page-section bg-white page-transition" data-aos="fade-up">
-      <div className="container">
-        <div className="text-center mb-5" data-aos="fade-down">
-          <h2 className="display-4 fw-bold text-dark mb-3">About Me</h2>
-          <div className="bg-primary mx-auto section-title-underline" style={{width: '80px', height: '4px'}}></div>
+    <section id="about" className="py-24 px-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16" data-aos="fade-up">
+          <p className="text-accent-500 font-semibold text-sm tracking-widest uppercase mb-3">About Me</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Background & Skills</h2>
         </div>
 
-        <div className="row g-5 align-items-center">
-          <div className="col-lg-6" data-aos="fade-right">
-            <h3 className="h2 fw-semibold mb-4 text-dark">Education & Background</h3>
-            <div className="card bg-light border-0 mb-4">
-              <div className="card-body p-4">
-                <h4 className="fw-semibold text-primary">Bachelor of Technology</h4>
-                <p className="text-muted mb-1">Computer Science and Engineering</p>
-                <p className="text-muted mb-1">Siddharth Institute of Engineering and Technology</p>
-                <p className="text-muted mb-0">June 2018 - May 2022 | GPA: 7.67</p>
+        <div className="grid lg:grid-cols-5 gap-12">
+          {/* Left: Education & Bio - 2 cols */}
+          <div className="lg:col-span-2 space-y-8" data-aos="fade-right">
+            {/* Education Card */}
+            <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-11 h-11 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-graduation-cap text-accent-500 text-lg" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">Bachelor of Technology</h3>
+                  <p className="text-accent-600 dark:text-accent-400 font-medium text-sm">Computer Science & Engineering</p>
+                </div>
+              </div>
+              <div className="space-y-1.5 text-sm text-gray-500 dark:text-gray-400 pl-[60px]">
+                <p>Siddharth Institute of Engineering and Technology</p>
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center gap-1.5"><i className="far fa-calendar text-xs" /> Jun 2018 – May 2022</span>
+                  <span className="text-gray-300 dark:text-gray-600">|</span>
+                  <span className="font-medium text-gray-700 dark:text-gray-300">GPA: 7.67</span>
+                </div>
               </div>
             </div>
-            <p className="text-muted lead">
-              I'm a passionate Software Engineer with experience in both frontend and backend development. 
-              I love creating user-friendly applications and solving complex problems with innovative solutions.
-            </p>
+
+            {/* Bio */}
+            <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                I'm a passionate Software Engineer with experience in both frontend and backend development. 
+                I love creating user-friendly applications and solving complex problems with innovative solutions.
+              </p>
+            </div>
           </div>
 
-          <div className="col-lg-6" data-aos="fade-left">
-            <h3 className="h2 fw-semibold mb-4 text-dark">Technical Skills</h3>
-            
-            <div className="mb-4">
-              <h4 className="fw-semibold mb-3 text-primary">Languages</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {skills.languages.map((skill, index) => (
-                  <span key={index} className="badge bg-primary bg-opacity-10 text-primary fs-6 skill-badge" data-aos="fade-up" data-aos-delay={index * 100}>
-                    {skill}
-                  </span>
-                ))}
+          {/* Right: Skills - 3 cols */}
+          <div className="lg:col-span-3 space-y-6" data-aos="fade-left">
+            {skillCategories.map((cat, i) => (
+              <div key={i}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`w-2 h-2 rounded-full ${dotColor[cat.color]}`} />
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wide uppercase">{cat.label}</h4>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((skill, j) => (
+                    <span
+                      key={j}
+                      className={`px-3 py-1.5 text-sm font-medium rounded-lg border transition-all duration-200 hover:scale-105 cursor-default ${colorMap[cat.color]}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="fw-semibold mb-3 text-primary">Frameworks</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {skills.frameworksAndLibraries.map((skill, index) => (
-                  <span key={index} className="badge bg-info bg-opacity-10 text-info fs-6 skill-badge" data-aos="fade-up" data-aos-delay={index * 100}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="fw-semibold mb-3 text-primary">Databases</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {skills.databases.map((skill, index) => (
-                  <span key={index} className="badge bg-success bg-opacity-10 text-success fs-6 skill-badge" data-aos="fade-up" data-aos-delay={index * 100}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="fw-semibold mb-3 text-primary">Tools</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {skills.tools.map((skill, index) => (
-                  <span key={index} className="badge bg-danger bg-opacity-10 text-danger fs-6 skill-badge" data-aos="fade-up" data-aos-delay={index * 100}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="fw-semibold mb-3 text-primary">Soft Skills</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {skills.softSkills.map((skill, index) => (
-                  <span key={index} className="badge bg-warning bg-opacity-10 text-warning fs-6 skill-badge" data-aos="fade-up" data-aos-delay={index * 100}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
