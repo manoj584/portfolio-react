@@ -25,10 +25,14 @@ const SubProject = ({ title, items }) => (
 );
 
 const Experience = () => {
-  const techTags = [
+   const rozanaTechTags = [
     'Angular', 'Ionic', 'TypeScript', 'RxJS', 'PrimeNG', 'Tailwind CSS',
     'Django', 'Python', 'Celery', 'PostgreSQL', 'AWS S3', 'CloudFront',
     'OpenStreetMap', 'MoEngage', 'Sentry', 'REST APIs'
+  ];
+
+  const unisysTechTags = [
+    'React', 'Bootstrap', 'NodeJs', 'Java', 'Vert.x', 'SQL', 'MongoDb', 'Selenium', 'Cucumber'
   ];
 
   return (
@@ -116,7 +120,7 @@ const Experience = () => {
             <div className="pt-5 border-t border-gray-200 dark:border-gray-800">
               <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Technologies</p>
               <div className="flex flex-wrap gap-1.5">
-                {techTags.map((tag, i) => (
+                {rozanaTechTags.map((tag, i) => (
                   <span key={i} className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent-500/10 text-accent-600 dark:text-accent-400 border border-accent-500/15">{tag}</span>
                 ))}
               </div>
@@ -159,6 +163,17 @@ const Experience = () => {
                 </ul>
               </div>
             </div>
+
+             {/* Tech tags */}
+            <div className="pt-5 border-t border-gray-200 dark:border-gray-800">
+              <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Technologies</p>
+              <div className="flex flex-wrap gap-1.5">
+                {unisysTechTags.map((tag, i) => (
+                  <span key={i} className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent-500/10 text-accent-600 dark:text-accent-400 border border-accent-500/15">{tag}</span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
