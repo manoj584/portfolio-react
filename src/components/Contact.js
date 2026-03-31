@@ -1,12 +1,59 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+// ============================================================
+// EmailJS Configuration — You MUST update these 3 values!
+// Follow the setup guide below to get your keys.
+// ============================================================
+const EMAILJS_SERVICE_ID = 'service_e5fnuh5';    // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'template_a40462e';  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY = '7D7H-e3mfE46pL--1';     // e.g. 'AbCdEfGhIjKlMn'
 
 const Contact = () => {
+  const formRef = useRef();
+  const [formData, setFormData] = useState({ from_name: '', from_email: '', message: '' });
+  const [status, setStatus] = useState({ type: '', message: '' }); // 'success' | 'error' | 'loading'
+
   const contactLinks = [
     { icon: 'fas fa-envelope', label: 'Email', value: 'manojbhaskar01234@gmail.com', href: 'mailto:manojbhaskar01234@gmail.com' },
     { icon: 'fas fa-phone', label: 'Phone', value: '+91 8317557678', href: 'tel:+918317557678' },
     { icon: 'fab fa-linkedin-in', label: 'LinkedIn', value: 'Connect with me', href: 'https://linkedin.com/in/manoj-bhaskar-99b842234/', external: true },
     { icon: 'fab fa-github', label: 'GitHub', value: 'View my code', href: 'https://github.com/Manoj584', external: true },
   ];
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.from_name.trim() || !formData.from_email.trim() || !formData.message.trim()) {
+      setStatus({ type: 'error', message: 'Please fill in all fields.' });
+      return;
+    }
+
+    setStatus({ type: 'loading', message: '' });
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
+      setFormData({ from_name: '', from_email: '', message: '' });
+
+      // Auto-clear success message after 5 seconds
+      setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again or use the contact links above.' });
+    }
+  };
 
   return (
     <section id="contact" className="relative py-24 px-4 overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">
@@ -48,30 +95,70 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           <div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none backdrop-blur-sm">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Quick Message</h3>
-            <form>
+
+            {/* Status Toast */}
+            {status.type && status.type !== 'loading' && (
+              <div
+                className={`mb-5 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-2 transition-all duration-300 ${
+                  status.type === 'success'
+                    ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20'
+                    : 'bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-500/20'
+                }`}
+              >
+                <i className={`fas ${status.type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}`} />
+                {status.message}
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <input
                   type="text"
+                  name="from_name"
+                  value={formData.from_name}
+                  onChange={handleChange}
                   placeholder="Your Name"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/30 transition-all text-sm"
                 />
                 <input
                   type="email"
+                  name="from_email"
+                  value={formData.from_email}
+                  onChange={handleChange}
                   placeholder="Your Email"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/30 transition-all text-sm"
                 />
               </div>
               <textarea
                 rows="5"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
+                required
                 className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/30 transition-all text-sm mb-4 resize-none"
               />
               <button
-                type="button"
-                onClick={() => alert('This is a demo form. Please use the contact links above to reach out!')}
-                className="w-full py-3.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white font-semibold transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-xl hover:shadow-accent-500/30 text-sm"
+                type="submit"
+                disabled={status.type === 'loading'}
+                className="w-full py-3.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white font-semibold transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-xl hover:shadow-accent-500/30 text-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Send Message (Demo)
+                {status.type === 'loading' ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <i className="fas fa-paper-plane" />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
