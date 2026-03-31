@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
   const contactLinks = [
     { icon: 'fas fa-envelope', label: 'Email', value: 'manojbhaskar01234@gmail.com', href: 'mailto:manojbhaskar01234@gmail.com' },
-    { icon: 'fas fa-phone-alt', label: 'Phone', value: '+91 8317557678', href: 'tel:+918317557678' },
+    { icon: 'fas fa-phone', label: 'Phone', value: '+91 8317557678', href: 'tel:+918317557678' },
     { icon: 'fab fa-linkedin-in', label: 'LinkedIn', value: 'Connect with me', href: 'https://linkedin.com/in/manoj-bhaskar-99b842234/', external: true },
     { icon: 'fab fa-github', label: 'GitHub', value: 'View my code', href: 'https://github.com/Manoj584', external: true },
   ];
