@@ -2,12 +2,11 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 // ============================================================
-// EmailJS Configuration — You MUST update these 3 values!
-// Follow the setup guide below to get your keys.
+// EmailJS Configuration — loaded from .env file
 // ============================================================
-const EMAILJS_SERVICE_ID = 'service_e5fnuh5';    // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'template_a40462e';  // e.g. 'template_xyz789'
-const EMAILJS_PUBLIC_KEY = '7D7H-e3mfE46pL--1';     // e.g. 'AbCdEfGhIjKlMn'
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const formRef = useRef();
