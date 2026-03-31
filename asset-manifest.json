@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-react/static/css/main.b8f79e72.css",
-    "main.js": "/portfolio-react/static/js/main.f6d02602.js",
+    "main.css": "/portfolio-react/static/css/main.a90398cd.css",
+    "main.js": "/portfolio-react/static/js/main.561293d3.js",
     "static/js/453.c173b4f9.chunk.js": "/portfolio-react/static/js/453.c173b4f9.chunk.js",
     "static/media/fa-solid-900.ttf": "/portfolio-react/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/fa-brands-400.ttf": "/portfolio-react/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -13,12 +13,12 @@
     "static/media/fa-v4compatibility.ttf": "/portfolio-react/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/portfolio-react/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/portfolio-react/index.html",
-    "main.b8f79e72.css.map": "/portfolio-react/static/css/main.b8f79e72.css.map",
-    "main.f6d02602.js.map": "/portfolio-react/static/js/main.f6d02602.js.map",
+    "main.a90398cd.css.map": "/portfolio-react/static/css/main.a90398cd.css.map",
+    "main.561293d3.js.map": "/portfolio-react/static/js/main.561293d3.js.map",
     "453.c173b4f9.chunk.js.map": "/portfolio-react/static/js/453.c173b4f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8f79e72.css",
-    "static/js/main.f6d02602.js"
+    "static/css/main.a90398cd.css",
+    "static/js/main.561293d3.js"
   ]
 }
