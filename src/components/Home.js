@@ -46,7 +46,7 @@ const Home = ({ scrollToSection }) => {
 
         {/* Description */}
         <p className="text-gray-500 dark:text-gray-500 text-lg max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="250">
-          Passionate about building scalable web applications using modern technologies like Angular, React, Node.js, MySQL, and MongoDB.
+          Passionate about building scalable web applications using modern technologies like Angular, Django, TypeScript, Python, and PostgreSQL.
         </p>
 
         {/* CTA Buttons */}

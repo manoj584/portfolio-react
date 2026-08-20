@@ -29,12 +29,15 @@ const About = () => {
   ];
 
   const skillCategories = [
-    { label: 'Languages', color: 'accent', icon: 'fas fa-code', items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'SQL'] },
-    { label: 'Frameworks', color: 'blue', icon: 'fas fa-layer-group', items: ['Angular', 'React', 'React Native', 'Node.js', 'Express.js', 'Bootstrap', 'Tailwind CSS'] },
-    { label: 'Databases', color: 'emerald', icon: 'fas fa-database', items: ['SQL Server', 'MySQL', 'MongoDB', 'Firebase'] },
-    { label: 'Testing', color: 'rose', icon: 'fas fa-vial', items: ['Playwright', 'Selenium'] },
-    { label: 'Tools', color: 'orange', icon: 'fas fa-wrench', items: ['Visual Studio Code', 'IntelliJ IDEA', 'Git', 'GitHub', 'Postman', 'Swagger'] },
+    { label: 'Languages', color: 'accent', icon: 'fas fa-code', items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'SQL', 'HTML5', 'CSS3'] },
+    { label: 'Frontend', color: 'blue', icon: 'fas fa-layer-group', items: ['Angular', 'Ionic', 'React', 'PrimeNG', 'Tailwind CSS', 'RxJS'] },
+    { label: 'Backend', color: 'emerald', icon: 'fas fa-server', items: ['Django', 'Django REST Framework', 'Node.js', 'Celery', 'Java (Vert.x)'] },
+    { label: 'Testing', color: 'rose', icon: 'fas fa-vial', items: ['Playwright', 'Selenium', 'Cucumber'] },
+    { label: 'Cloud & Data', color: 'orange', icon: 'fas fa-cloud', items: ['AWS S3', 'CloudFront CDN', 'PostgreSQL', 'SQL Server'] },
+    { label: 'Analytics & AI', color: 'purple', icon: 'fas fa-chart-line', items: ['MoEngage SDK', 'Sentry', 'Claude Code', 'Cursor', 'Windsurf'] },
   ];
+
+
 
   const colorMap = {
     accent: 'bg-accent-500/10 text-accent-600 dark:text-accent-400 border-accent-500/20',
