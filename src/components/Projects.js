@@ -1,4 +1,5 @@
 import React from 'react';
+import MobileEmulator from './MobileEmulator';
 
 const Projects = () => {
   const projects = [
@@ -26,6 +27,10 @@ const Projects = () => {
       icon: 'fas fa-mobile-alt',
       link: 'https://play.google.com/store/apps/details?id=com.bhaskarmanoj.reactnativeacademy',
       linkLabel: 'Play Store',
+      hasLiveDemo: true,
+      demoUrl: 'https://manoj584.github.io/ReactNativeApp/',
+      demoTitle: 'Learn React Native',
+      demoDescription: 'Try the interactive app right here - no download needed!'
     }
   ];
 
@@ -100,6 +105,26 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {/* Live Demo Section */}
+        {projects.some(p => p.hasLiveDemo) && (
+          <div className="mt-16" data-aos="fade-up" data-aos-delay={200}>
+            <div className="text-center mb-10">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Interactive Demo</h3>
+              <p className="text-gray-600 dark:text-gray-400">Try the app directly in your browser - no installation required!</p>
+            </div>
+            
+            {projects.filter(p => p.hasLiveDemo).map((project, index) => (
+              <div key={`demo-${index}`} className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12">
+                <MobileEmulator
+                  appUrl={project.demoUrl}
+                  title={project.demoTitle}
+                  description={project.demoDescription}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
