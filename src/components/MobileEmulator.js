@@ -30,7 +30,7 @@ const MobileEmulator = ({ appUrl, title, description }) => {
         {/* Screen Content */}
         <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white dark:bg-gray-900 relative">
           {/* Status Bar */}
-          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/50 to-transparent z-10 flex items-center justify-between px-6">
+          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/50 to-transparent z-10 flex items-center justify-between px-6 pointer-events-none">
             <span className="text-white text-xs font-medium">9:41</span>
             <div className="flex items-center gap-1">
               <div className="w-4 h-3 bg-white rounded-sm opacity-80"></div>
@@ -39,7 +39,7 @@ const MobileEmulator = ({ appUrl, title, description }) => {
           </div>
 
           {/* App iframe */}
-          <div className="w-full h-full pt-8">
+          <div className="w-full h-full pt-8 box-border">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800 z-0">
                 <div className="text-center">
@@ -71,6 +71,8 @@ const MobileEmulator = ({ appUrl, title, description }) => {
             <iframe
               src={appUrl}
               className="w-full h-full border-0"
+              style={{ overflow: 'auto', WebkitOverflowScrolling: 'touch' }}
+              scrolling="yes"
               onLoad={handleLoad}
               onError={handleError}
               title={title}
@@ -80,7 +82,7 @@ const MobileEmulator = ({ appUrl, title, description }) => {
           </div>
 
           {/* Home Indicator */}
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-800 dark:bg-white rounded-full z-20"></div>
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-800 dark:bg-white rounded-full z-20 pointer-events-none"></div>
         </div>
       </div>
 
