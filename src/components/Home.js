@@ -67,8 +67,8 @@ const Home = ({ scrollToSection }) => {
             View My Work
           </button>
           <a
-            href={`${process.env.PUBLIC_URL}/Bhaskar_Manoj_Resume.pdf`}
-            download="Bhaskar_Manoj_Resume.pdf"
+            href={`${process.env.PUBLIC_URL}/Manoj_Bhaskar_Resume_Frontend.pdf`}
+            download="Manoj_Bhaskar_Resume_Frontend.pdf"
             className="group px-8 py-3.5 border border-gray-300 dark:border-gray-700 hover:border-accent-500 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:text-accent-600 dark:hover:text-white font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-50 dark:hover:bg-white/5"
           >
             <span className="flex items-center gap-2">
