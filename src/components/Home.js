@@ -66,6 +66,16 @@ const Home = ({ scrollToSection }) => {
           >
             View My Work
           </button>
+          <a
+            href={`${process.env.PUBLIC_URL}/Manoj_Bhaskar_Resume_Frontend.pdf`}
+            download="Manoj_Bhaskar_Resume_Frontend.pdf"
+            className="group px-8 py-3.5 border border-gray-300 dark:border-gray-700 hover:border-accent-500 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:text-accent-600 dark:hover:text-white font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-50 dark:hover:bg-white/5"
+          >
+            <span className="flex items-center gap-2">
+              Download Resume
+              <svg className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
+            </span>
+          </a>
         </div>
 
         {/* Social Links */}
